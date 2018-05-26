@@ -20,7 +20,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'spree_extension'
   s.add_dependency 'json'
   s.add_dependency 'addressable'
-  s.add_dependency 'rest-client'
   s.add_dependency 'logging'
 
   #add gems here for files

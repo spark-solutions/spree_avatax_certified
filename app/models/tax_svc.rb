@@ -2,7 +2,6 @@ require 'json'
 require 'net/http'
 require 'addressable/uri'
 require 'base64'
-require 'rest-client'
 require 'logging'
 
 # Avatax tax calculation API calls
@@ -15,7 +14,6 @@ class TaxSvc
 
   def get_tax(request_hash)
     log(__method__, request_hash)
-    RestClient.log = logger.logger
 
     response = SpreeAvataxCertified::Response::GetTax.new(request('get', request_hash))
 
@@ -124,22 +122,22 @@ class TaxSvc
 
   def request(uri, request_hash)
     tries ||= AVALARA_RETRY
-    res = RestClient::Request.execute(method: :post,
-                                      open_timeout: AVALARA_OPEN_TIMEOUT,
-                                      timeout: AVALARA_READ_TIMEOUT,
-                                      url: service_url + uri,
-                                      payload:  JSON.generate(request_hash),
-                                      headers: {
-                                        authorization: credential,
-                                        content_type: 'application/json'
-                                      }) do |response, _request, _result|
-      response
-    end
 
-    JSON.parse(res)
-  rescue *(ERRORS_TO_RETRY + [RestClient::ExceptionWithResponse,
-                              RestClient::ServerBrokeConnection,
-                              RestClient::SSLCertificateNotVerified]) => e
+    full_uri = URI.parse(service_url + uri)
+
+    http = Net::HTTP.new(full_uri.host, full_uri.port)
+    http.use_ssl = true
+    http.read_timeout = AVALARA_READ_TIMEOUT
+    http.open_timeout = AVALARA_OPEN_TIMEOUT
+
+    request = Net::HTTP::Post.new(full_uri.path, 'Content-Type' => 'application/json',
+                                                 'Authorization' => credential)
+
+    request.body = JSON.generate(request_hash)
+    response = http.request(request)
+
+    JSON.parse(response.body)
+  rescue ERRORS_TO_RETRY => e
     retry unless (tries -= 1).zero?
     logger.error e, 'Avalara Request Error'
   end
