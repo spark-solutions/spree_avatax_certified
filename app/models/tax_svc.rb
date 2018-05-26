@@ -9,8 +9,10 @@ class TaxSvc
   AVALARA_OPEN_TIMEOUT = ENV.fetch('AVALARA_OPEN_TIMEOUT', 2)
   AVALARA_READ_TIMEOUT = ENV.fetch('AVALARA_READ_TIMEOUT', 6)
   AVALARA_RETRY        = ENV.fetch('AVALARA_RETRY', 2)
-  ERRORS_TO_RETRY = [Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, Errno::ECONNREFUSED, EOFError,
-                     Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError].freeze
+
+  ERRORS_TO_RETRY = [Timeout::Error, Errno::EINVAL, Errno::ECONNRESET,
+                     Errno::ECONNREFUSED, EOFError, Net::HTTPBadResponse,
+                     Net::HTTPHeaderSyntaxError, Net::ProtocolError].freeze
 
   def get_tax(request_hash)
     log(__method__, request_hash)
@@ -38,13 +40,9 @@ class TaxSvc
       coor = coordinates[:latitude].to_s + ',' + coordinates[:longitude].to_s
 
       uri = URI(service_url + coor + '/get?saleamount=' + sale_amount.to_s)
-      http = Net::HTTP.new(uri.host, uri.port)
-      http.use_ssl = true
-      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-      http.open_timeout = AVALARA_OPEN_TIMEOUT
-      http.read_timeout = AVALARA_READ_TIMEOUT
+      http = prepare_http_object(uri)
 
-      res = http.get(uri.request_uri, 'Authorization' => credential, 'Content-Type' => 'application/json')
+      res = http.get(uri.request_uri, prepare_http_headers)
       JSON.parse(res.body)
     end
   rescue *ERRORS_TO_RETRY => e
@@ -59,13 +57,9 @@ class TaxSvc
   end
 
   def validate_address(address)
-    tries ||= 2
+    tries ||= AVALARA_RETRY
     uri = URI(address_service_url + address.to_query)
-    http = Net::HTTP.new(uri.host, uri.port)
-    http.use_ssl = true
-    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-    http.open_timeout = AVALARA_OPEN_TIMEOUT
-    http.read_timeout = AVALARA_READ_TIMEOUT
+    http = prepare_http_object(uri)
     request = http.get(uri.request_uri, 'Authorization' => credential)
     response = SpreeAvataxCertified::Response::AddressValidation.new(request.body)
     handle_response(response)
@@ -124,20 +118,14 @@ class TaxSvc
     tries ||= AVALARA_RETRY
 
     full_uri = URI.parse(service_url + uri)
+    http = prepare_http_object(full_uri)
 
-    http = Net::HTTP.new(full_uri.host, full_uri.port)
-    http.use_ssl = true
-    http.read_timeout = AVALARA_READ_TIMEOUT
-    http.open_timeout = AVALARA_OPEN_TIMEOUT
+    req = Net::HTTP::Post.new(full_uri.path, prepare_http_headers)
 
-    request = Net::HTTP::Post.new(full_uri.path, 'Content-Type' => 'application/json',
-                                                 'Authorization' => credential)
-
-    request.body = JSON.generate(request_hash)
-    response = http.request(request)
-
-    JSON.parse(response.body)
-  rescue ERRORS_TO_RETRY => e
+    req.body = JSON.generate(request_hash)
+    res = http.request(req)
+    JSON.parse(res.body)
+  rescue *ERRORS_TO_RETRY => e
     retry unless (tries -= 1).zero?
     logger.error e, 'Avalara Request Error'
   end
@@ -145,5 +133,21 @@ class TaxSvc
   def log(method, request_hash = nil)
     return if request_hash.nil?
     logger.debug(request_hash, "#{method} request hash")
+  end
+
+  def prepare_http_object(uri)
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    http.open_timeout = AVALARA_OPEN_TIMEOUT
+    http.read_timeout = AVALARA_READ_TIMEOUT
+    http
+  end
+
+  def prepare_http_headers
+    {
+      'Content-Type' => 'application/json',
+      'Authorization' => credential
+    }
   end
 end
