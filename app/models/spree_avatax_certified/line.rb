@@ -25,7 +25,7 @@ module SpreeAvataxCertified
         LineNo: "#{line_item.id}-LI",
         Description: line_item.name[0..255],
         TaxCode: line_item.tax_category.try(:tax_code) || 'P0000000',
-        ItemCode: line_item.variant.sku,
+        ItemCode: line_item.sku,
         Qty: line_item.quantity,
         Amount: line_item.amount.to_f,
         OriginCode: get_stock_location(line_item),
