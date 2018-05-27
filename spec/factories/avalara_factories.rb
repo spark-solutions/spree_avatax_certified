@@ -23,7 +23,7 @@ end
 FactoryBot.modify do
   factory :tax_category, class: Spree::TaxCategory do
     name { "TaxCategory - #{rand(999999)}" }
-    tax_code { 'PC030000' }
+    tax_code { 'PC040000' }
   end
 
   factory :address, class: Spree::Address do

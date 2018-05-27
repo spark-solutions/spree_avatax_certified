@@ -13,7 +13,7 @@ FactoryBot.define do
     TotalTaxCalculated '0.6'
     TaxLines [
       {'LineNo'=>'1-LI',
-       'TaxCode'=>'PC030000',
+       'TaxCode'=>'PC040000',
        'Taxability'=>'true',
        'BoundaryLevel'=>'Zip5',
        'Exemption'=>'0',
