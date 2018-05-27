@@ -4,6 +4,7 @@ FactoryBot.define do
     CustomerCode '1'
     DocDate '2014-11-03'
     CompanyCode '54321'
+    CompanyCode 'GOOPINC'
     CustomerUsageType ''
     ExemptionNo nil
     Client AVATAX_CLIENT_VERSION
@@ -35,11 +36,11 @@ FactoryBot.modify do
     firstname 'John'
     lastname 'Doe'
     company 'Company'
-    address1 '915 S Jackson St'
+    address1 '9529 Vernon Court'
     address2 ''
-    city 'Montgomery'
-    state_name 'Alabama'
-    zipcode '36104'
+    city 'New York'
+    state_name 'New York'
+    zipcode '10027'
     phone '555-555-0199'
     alternative_phone '555-555-0199'
 
@@ -47,7 +48,7 @@ FactoryBot.modify do
       if !Spree::State.find_by(name: address.state_name).nil?
         Spree::State.find_by(name: address.state_name)
       else
-         address.association(:state, name: 'Alabama', abbr: 'AL')
+        address.association(:state, name: 'New York', abbr: 'NY')
       end
     end
 
@@ -62,7 +63,7 @@ FactoryBot.modify do
   end
 
   factory :ship_address, parent: :address do
-    address1 '915 S Jackson St'
+    address1 '9529 Vernon Court'
   end
 
   # Adding this modifier since US country name changes between solidus versions
