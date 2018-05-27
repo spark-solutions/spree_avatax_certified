@@ -9,6 +9,7 @@ RSpec.configure do |config|
   config.before :each do
     DatabaseCleaner.start
     MyConfigPreferences.set_preferences
+    Rails.cache.clear
   end
 
   config.after :each do
