@@ -5,21 +5,20 @@ http_interactions:
     uri: https://development.avalara.net/1.0/tax/get
     body:
       encoding: UTF-8
-      string: '{"DocCode":"R367762495","DocDate":"2017-08-02","Discount":"0.0","Commit":false,"DocType":"SalesOrder","Addresses":[{"AddressCode":"Orig","Line1":"915
-        S Jackson St","Line2":"","City":"Montgomery","Region":"Alabama","PostalCode":"36104","Country":"United
-        States"},{"AddressCode":"Dest","Line1":"915 S Jackson St","Line2":"","City":"Montgomery","Region":"Alabama","Country":"US","PostalCode":"36104"}],"Lines":[{"LineNo":"1-LI","Description":"Product
-        #47 - 8737","TaxCode":"PC030000","ItemCode":"SKU-49","Qty":1,"Amount":10.0,"OriginCode":"Orig","DestinationCode":"Dest","CustomerUsageType":null,"Discounted":false,"TaxIncluded":true}],"CustomerCode":1,"CompanyCode":"54321","CustomerUsageType":null,"ExemptionNo":null,"Client":"a0o33000004FH8l","ReferenceCode":"R367762495","DetailLevel":"Tax","CurrencyCode":"USD"}'
+      string: '{"DocCode":"R049009023","DocDate":"2018-05-27","Discount":"0.0","Commit":false,"DocType":"SalesOrder","Addresses":[{"AddressCode":"Orig","Line1":"9529
+        Vernon Court","Line2":"","City":"New York","Region":"New York","PostalCode":"10027","Country":"United
+        States"},{"AddressCode":"Dest","Line1":"9529 Vernon Court","Line2":"","City":"New
+        York","Region":"New York","Country":"US","PostalCode":"10027"}],"Lines":[{"LineNo":"3-LI","Description":"Product
+        #3 - 6407","TaxCode":"PC040000","ItemCode":"SKU-3","Qty":1,"Amount":10.0,"OriginCode":"Orig","DestinationCode":"Dest","CustomerUsageType":null,"Discounted":false,"TaxIncluded":true}],"CustomerCode":3,"CompanyCode":"test_company","CustomerUsageType":null,"ExemptionNo":null,"Client":"a0o33000004FH8l","ReferenceCode":"R049009023","DetailLevel":"Tax","CurrencyCode":"USD"}'
     headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - Basic MTEwMDExMzA5NjoxRDEzRURBMkRDQ0M3RTRB
       Content-Type:
       - application/json
-      Content-Length:
-      - '813'
+      Authorization:
+      - Basic dGVzdF9hY2NvdW50OnRlc3RfbGljZW5zZV9rZXk=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
       User-Agent:
       - Ruby
   response:
@@ -27,66 +26,132 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - private
+      Date:
+      - Sun, 27 May 2018 14:30:48 GMT
       Content-Type:
       - text/json; charset=utf-8
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '719'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private
       Vary:
       - Accept-Encoding
       X-Aspnet-Version:
       - 4.0.30319
       X-Powered-By:
       - ASP.NET
-      Date:
-      - Wed, 02 Aug 2017 23:37:08 GMT
-      Content-Length:
-      - '564'
       Set-Cookie:
-      - TS017f1821=01a8ddc44ec909bd0cd49d065f48aee73842aa1ed18a94cd49c680af47d00ff6ec7483bd1384d95a342a0da6c879eaf1e7dedc428f;
+      - TS017f1821=01a8ddc44e4c1fcf6fc9a2904c1b1e00daadad7134f647029e5b17b1558098d2b54622a0de9ce06cbf68750a058018cd4518bb60ea;
         Path=/
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3m
-        kuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZk
-        AWz2zkrayZ4hgKrIHz9+fB8/In5x8tHTanpSzfKPHqUfvbr36YMHn+7tP7z/
-        0Yi/eJq1/MXezu6D7Z2D7Z09fPGmWORNmy1W4Vdv9u49uvfg0c7D8YO9+5/u
-        3d//KW5ctVl5vKjWyxbNH44/FRj4+GnRTM0XO/bT03f5YtUW1TL8+E32LpuU
-        jE4AhD7HZzvjewf+ZydZOV2XhP8s+DZ7NzCm7N3zYpk39M33EqIK/nhR0V8f
-        7W4/P9MWhk4vT3bu7dCjH2eToizaa3zT1uscnz6hYc2y+vp5fpmX+OJ4Nqvz
-        psF3/EY4kFeK0854Z5/gGsDykWDepxXhEx1jhH406rzNitIOjz75Gji8yi8U
-        7PFz/H0ChGoe+Fev8cF31nXRvLleMaDXLSCaT19kC/70+Pnxk+Mvju3nhqY7
-        u/iIOnQN09dvjt+cpm+Of++Pfkny/QT/lyZKTDdb+gH9+dHD3fvp6/Q72fRt
-        Uy3T1y2g6temq6fEvfj4RCfti2rZXlSLnEaCT7uDelkRs5fm5Xuf7u7s4+Mu
-        MQgv+eiMZ2Nv5/7eg4cP8U1nnLs7u/d3QeBfkozeG/cv6+ICH//c486T8Spv
-        1mVrvn+9nk4J149+SfL/AO4wCmhYBAAA
+      string: |
+        {
+        "ResultCode": "Success",
+        "DocCode": "R049009023",
+        "DocDate": "2018-05-27",
+        "Timestamp": "2018-05-27T14:30:47.5126117Z",
+        "TotalAmount": "9.18",
+        "TotalDiscount": "0",
+        "TotalExemption": "0",
+        "TotalTaxable": "9.18",
+        "TotalTax": "0.82",
+        "TotalTaxCalculated": "0.82",
+        "TaxLines": [
+        {
+        "LineNo": "3-LI",
+        "TaxCode": "PC040000",
+        "Taxability": "true",
+        "BoundaryLevel": "Zip5",
+        "Exemption": "0",
+        "Discount": "0",
+        "Taxable": "9.18",
+        "Rate": "0.088750",
+        "Tax": "0.82",
+        "TaxCalculated": "0.82",
+        "TaxDetails": [
+        {
+        "Country": "US",
+        "Region": "NY",
+        "JurisType": "State",
+        "JurisCode": "36",
+        "Taxable": "9.18",
+        "Rate": "0.040000",
+        "Tax": "0.37",
+        "JurisName": "NEW YORK",
+        "TaxName": "NY STATE TAX"}
+        ,{
+        "Country": "US",
+        "Region": "NY",
+        "JurisType": "City",
+        "JurisCode": "51000",
+        "Taxable": "9.18",
+        "Rate": "0.045000",
+        "Tax": "0.41",
+        "JurisName": "NEW YORK CITY",
+        "TaxName": "NY CITY TAX"}
+        ,{
+        "Country": "US",
+        "Region": "NY",
+        "JurisType": "Special",
+        "JurisCode": "359071",
+        "Taxable": "9.18",
+        "Rate": "0.003750",
+        "Tax": "0.04",
+        "JurisName": "METROPOLITAN COMMUTER TRANSPORTATION DISTRICT",
+        "TaxName": "NY SPECIAL TAX"}
+        ]
+        }
+        ]
+        ,
+        "TaxAddresses": [
+        {
+        "Address": "9529 Vernon Court",
+        "AddressCode": "Dest",
+        "City": "New York",
+        "Country": "US",
+        "PostalCode": "10027",
+        "Region": "NY",
+        "TaxRegionId": "2088629",
+        "JurisCode": "3600051000"}
+        ,{
+        "Address": "9529 Vernon Court",
+        "AddressCode": "Orig",
+        "City": "New York",
+        "Country": "US",
+        "PostalCode": "10027",
+        "Region": "NY",
+        "TaxRegionId": "2088629",
+        "JurisCode": "3600051000"}
+        ]
+        ,
+        "TaxDate": "2018-05-27"}
     http_version: 
-  recorded_at: Wed, 02 Aug 2017 23:37:09 GMT
+  recorded_at: Sun, 27 May 2018 14:31:00 GMT
 - request:
     method: post
     uri: https://development.avalara.net/1.0/tax/get
     body:
       encoding: UTF-8
-      string: '{"DocCode":"R367762495","DocDate":"2017-08-02","Discount":"0.0","Commit":false,"DocType":"SalesOrder","Addresses":[{"AddressCode":"Orig","Line1":"915
-        S Jackson St","Line2":"","City":"Montgomery","Region":"Alabama","PostalCode":"36104","Country":"United
-        States"},{"AddressCode":"Dest","Line1":"915 S Jackson St","Line2":"","City":"Montgomery","Region":"Alabama","Country":"US","PostalCode":"36104"},{"AddressCode":"2","Line1":"1600
-        Pennsylvania Ave NW","Line2":null,"City":"Washington","PostalCode":"20500","Country":"US"}],"Lines":[{"LineNo":"1-LI","Description":"Product
-        #47 - 8737","TaxCode":"PC030000","ItemCode":"SKU-49","Qty":1,"Amount":10.0,"OriginCode":"2","DestinationCode":"Dest","CustomerUsageType":null,"Discounted":false,"TaxIncluded":true},{"LineNo":"1-FR","ItemCode":"Avalara
-        Ground","Qty":1,"Amount":100.0,"OriginCode":"2","DestinationCode":"Dest","CustomerUsageType":null,"Description":"Shipping
-        Charge","TaxCode":"FR000000","Discounted":false,"TaxIncluded":true}],"CustomerCode":1,"CompanyCode":"54321","CustomerUsageType":null,"ExemptionNo":null,"Client":"a0o33000004FH8l","ReferenceCode":"R367762495","DetailLevel":"Tax","CurrencyCode":"USD"}'
+      string: '{"DocCode":"R049009023","DocDate":"2018-05-27","Discount":"0.0","Commit":false,"DocType":"SalesOrder","Addresses":[{"AddressCode":"Orig","Line1":"9529
+        Vernon Court","Line2":"","City":"New York","Region":"New York","PostalCode":"10027","Country":"United
+        States"},{"AddressCode":"Dest","Line1":"9529 Vernon Court","Line2":"","City":"New
+        York","Region":"New York","Country":"US","PostalCode":"10027"},{"AddressCode":"6","Line1":"1600
+        Pennsylvania Ave NW","Line2":null,"City":"Washington","PostalCode":"20500","Country":"US"}],"Lines":[{"LineNo":"3-LI","Description":"Product
+        #3 - 6407","TaxCode":"PC040000","ItemCode":"SKU-3","Qty":1,"Amount":10.0,"OriginCode":"6","DestinationCode":"Dest","CustomerUsageType":null,"Discounted":false,"TaxIncluded":true},{"LineNo":"3-FR","ItemCode":"Avalara
+        Ground","Qty":1,"Amount":100.0,"OriginCode":"6","DestinationCode":"Dest","CustomerUsageType":null,"Description":"Shipping
+        Charge","TaxCode":"FR000000","Discounted":false,"TaxIncluded":true}],"CustomerCode":3,"CompanyCode":"test_company","CustomerUsageType":null,"ExemptionNo":null,"Client":"a0o33000004FH8l","ReferenceCode":"R049009023","DetailLevel":"Tax","CurrencyCode":"USD"}'
     headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - Basic MTEwMDExMzA5NjoxRDEzRURBMkRDQ0M3RTRB
       Content-Type:
       - application/json
-      Content-Length:
-      - '1161'
+      Authorization:
+      - Basic dGVzdF9hY2NvdW50OnRlc3RfbGljZW5zZV9rZXk=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
       User-Agent:
       - Ruby
   response:
@@ -94,44 +159,152 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - private
+      Date:
+      - Sun, 27 May 2018 14:30:49 GMT
       Content-Type:
       - text/json; charset=utf-8
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '883'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private
       Vary:
       - Accept-Encoding
       X-Aspnet-Version:
       - 4.0.30319
       X-Powered-By:
       - ASP.NET
-      Date:
-      - Wed, 02 Aug 2017 23:37:10 GMT
-      Content-Length:
-      - '688'
       Set-Cookie:
-      - TS017f1821=01a8ddc44e63b01dc024a991107e641aa72bb51b799b95c7d6ebd14e6b870ae4e61c7d5cceb8882f8d86c176c3426924a3fc578524;
+      - TS017f1821=01a8ddc44e68d76818d8e236036fa180553e29216da6a89bbacf4af53f487bc246f1632b4fd8be250f941a99e29b79d67425ea5e8a;
         Path=/
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3m
-        kuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZk
-        AWz2zkrayZ4hgKrIHz9+fB8/In5x8tGrvFmX7Uk1yz96lH70ej2d5k3z0Sj5
-        6Gk1fZq1/Onezu6D7Z2D7Z09fPGmWORNmy1W4Vdv9u49uvfg0e7OeH9v58GD
-        e3s/xY2rNiuPF9V62aL57s798YMH9ounRTM1X+3YT0/f5YtVW1TL8OM32bts
-        UjJCHTD0DT7dH+/d8z87ycrpuqQxzIJvs3fxcdGADRle3fv0wYNP9/Yf3scX
-        9MbzYpk39M33EiIZ/nhR0V8f7W4/P9MW5tWXJzv3dujRj7NJURbtNb5p63WO
-        T5/QiGdZff08v8xLfHE8m9VK9P7Q+yQCUCHDw/GnjPkrHc/OeGefujbN5KN7
-        B/pnSA7vi6d5mxWlHd4JuqsZ5a9eo8mr/EIxOn6Ov7+zrovmzfWK+3zdEkT7
-        qaHCzi4+IthfA1UG9CJbcLvj58dPjr84xufUzH2avn5z/OY0fXP8e3/0S5Lv
-        J78kGRHm/sQ8e6XvGJSevaLu6NGPf3Yn5tPxLrPOhuHeGx9wE/oznBnvix/K
-        zLwHrgzJTcItp+b7iTRRcjpB0g/oz48e7t5PX6ffyaZvm2qZvm4BVb82mD8l
-        rYOPT3TavqiW7UW1yIkg+LRLm5cVKanSvHzv092dfXzcJRnhJR+dMfH3du7v
-        PXj4EN/wYM37O7u7O7v3d0EW4TVFDt/tfrqzk77Ml8vmurzMlkWWHl/m6Yvv
-        Aog2M2BYBswAvps182J50RI6+HTzAAgx6ps+Fmzx0dMT/N0ZwMP9PvKEuz6E
-        PGbk/wFPeiFa+AUAAA==
+      string: |
+        {
+        "ResultCode": "Success",
+        "DocCode": "R049009023",
+        "DocDate": "2018-05-27",
+        "Timestamp": "2018-05-27T14:30:47.6879381Z",
+        "TotalAmount": "101.03",
+        "TotalDiscount": "0",
+        "TotalExemption": "0",
+        "TotalTaxable": "101.03",
+        "TotalTax": "8.97",
+        "TotalTaxCalculated": "8.97",
+        "TaxLines": [
+        {
+        "LineNo": "3-LI",
+        "TaxCode": "PC040000",
+        "Taxability": "true",
+        "BoundaryLevel": "Zip5",
+        "Exemption": "0",
+        "Discount": "0",
+        "Taxable": "9.18",
+        "Rate": "0.088750",
+        "Tax": "0.82",
+        "TaxCalculated": "0.82",
+        "TaxDetails": [
+        {
+        "Country": "US",
+        "Region": "NY",
+        "JurisType": "State",
+        "JurisCode": "36",
+        "Taxable": "9.18",
+        "Rate": "0.040000",
+        "Tax": "0.37",
+        "JurisName": "NEW YORK",
+        "TaxName": "NY STATE TAX"}
+        ,{
+        "Country": "US",
+        "Region": "NY",
+        "JurisType": "City",
+        "JurisCode": "51000",
+        "Taxable": "9.18",
+        "Rate": "0.045000",
+        "Tax": "0.41",
+        "JurisName": "NEW YORK CITY",
+        "TaxName": "NY CITY TAX"}
+        ,{
+        "Country": "US",
+        "Region": "NY",
+        "JurisType": "Special",
+        "JurisCode": "359071",
+        "Taxable": "9.18",
+        "Rate": "0.003750",
+        "Tax": "0.04",
+        "JurisName": "METROPOLITAN COMMUTER TRANSPORTATION DISTRICT",
+        "TaxName": "NY SPECIAL TAX"}
+        ]
+        }
+        ,{
+        "LineNo": "3-FR",
+        "TaxCode": "FR000000",
+        "Taxability": "true",
+        "BoundaryLevel": "Zip5",
+        "Exemption": "0",
+        "Discount": "0",
+        "Taxable": "91.85",
+        "Rate": "0.088750",
+        "Tax": "8.15",
+        "TaxCalculated": "8.15",
+        "TaxDetails": [
+        {
+        "Country": "US",
+        "Region": "NY",
+        "JurisType": "State",
+        "JurisCode": "36",
+        "Taxable": "91.85",
+        "Rate": "0.040000",
+        "Tax": "3.67",
+        "JurisName": "NEW YORK",
+        "TaxName": "NY STATE TAX"}
+        ,{
+        "Country": "US",
+        "Region": "NY",
+        "JurisType": "City",
+        "JurisCode": "51000",
+        "Taxable": "91.85",
+        "Rate": "0.045000",
+        "Tax": "4.13",
+        "JurisName": "NEW YORK CITY",
+        "TaxName": "NY CITY TAX"}
+        ,{
+        "Country": "US",
+        "Region": "NY",
+        "JurisType": "Special",
+        "JurisCode": "359071",
+        "Taxable": "91.85",
+        "Rate": "0.003750",
+        "Tax": "0.35",
+        "JurisName": "METROPOLITAN COMMUTER TRANSPORTATION DISTRICT",
+        "TaxName": "NY SPECIAL TAX"}
+        ]
+        }
+        ]
+        ,
+        "TaxAddresses": [
+        {
+        "Address": "9529 Vernon Court",
+        "AddressCode": "Dest",
+        "City": "New York",
+        "Country": "US",
+        "PostalCode": "10027",
+        "Region": "NY",
+        "TaxRegionId": "2088629",
+        "JurisCode": "3600051000"}
+        ,{
+        "Address": "1600 Pennsylvania Ave NW",
+        "AddressCode": "6",
+        "City": "Washington",
+        "Country": "US",
+        "PostalCode": "20500",
+        "Region": "DC",
+        "TaxRegionId": "949",
+        "JurisCode": "1100000000"}
+        ]
+        ,
+        "TaxDate": "2018-05-27"}
     http_version: 
-  recorded_at: Wed, 02 Aug 2017 23:37:10 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Sun, 27 May 2018 14:31:01 GMT
+recorded_with: VCR 4.0.0

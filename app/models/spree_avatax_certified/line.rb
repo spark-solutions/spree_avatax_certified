@@ -60,7 +60,7 @@ module SpreeAvataxCertified
         CustomerUsageType: order.customer_usage_type,
         Description: 'Shipping Charge',
         TaxCode: shipment.shipping_method_tax_code,
-        Discounted: false,
+        Discounted: false, # FIXME - this should check if there are any promo adjustments for this shipment
         TaxIncluded: tax_included_in_price?(shipment)
       }
     end

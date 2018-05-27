@@ -5,11 +5,11 @@ http_interactions:
     uri: https://development.avalara.net/1.0/tax/get
     body:
       encoding: UTF-8
-      string: '{"DocCode":"R520027028","DocDate":"2018-05-27","Discount":"0.0","Commit":false,"DocType":"SalesOrder","Addresses":[{"AddressCode":"Orig","Line1":"9529
+      string: '{"DocCode":"R951998412","DocDate":"2018-05-27","Discount":"0.0","Commit":false,"DocType":"SalesOrder","Addresses":[{"AddressCode":"Orig","Line1":"9529
         Vernon Court","Line2":"","City":"New York","Region":"New York","PostalCode":"10027","Country":"United
         States"},{"AddressCode":"Dest","Line1":"9529 Vernon Court","Line2":"","City":"New
-        York","Region":"New York","Country":"US","PostalCode":"10027"}],"Lines":[{"LineNo":"8-LI","Description":"Product
-        #8 - 6869","TaxCode":"PC040000","ItemCode":"SKU-8","Qty":1,"Amount":10.0,"OriginCode":"Orig","DestinationCode":"Dest","CustomerUsageType":null,"Discounted":false,"TaxIncluded":false}],"CustomerCode":8,"CompanyCode":"test_company","CustomerUsageType":null,"ExemptionNo":null,"Client":"a0o33000004FH8l","ReferenceCode":"R520027028","DetailLevel":"Tax","CurrencyCode":"USD"}'
+        York","Region":"New York","Country":"US","PostalCode":"10027"}],"Lines":[{"LineNo":"11-LI","Description":"Product
+        #11 - 7992","TaxCode":"PC040000","ItemCode":"SKU-11","Qty":1,"Amount":10.0,"OriginCode":"Orig","DestinationCode":"Dest","CustomerUsageType":null,"Discounted":false,"TaxIncluded":false}],"CustomerCode":11,"CompanyCode":"test_company","CustomerUsageType":null,"ExemptionNo":null,"Client":"a0o33000004FH8l","ReferenceCode":"R951998412","DetailLevel":"Tax","CurrencyCode":"USD"}'
     headers:
       Content-Type:
       - application/json
@@ -27,11 +27,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 27 May 2018 14:31:01 GMT
+      - Sun, 27 May 2018 14:31:13 GMT
       Content-Type:
       - text/json; charset=utf-8
       Content-Length:
-      - '711'
+      - '714'
       Connection:
       - keep-alive
       Cache-Control:
@@ -43,16 +43,16 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Set-Cookie:
-      - TS017f1821=01a8ddc44ee7a1137d3b9d20d37e299c139d341c6961a4bc3878e6022062fa33f4096d55a2784972245fb7d35033bce254d4dea616;
+      - TS017f1821=01a8ddc44e79597f2112d22ee8853fa4a746aed5bdaca67bc91c2a95b237ee8cdc739571e593ef982f44c00c6b3aef808c76d846e6;
         Path=/
     body:
       encoding: ASCII-8BIT
       string: |
         {
         "ResultCode": "Success",
-        "DocCode": "R520027028",
+        "DocCode": "R951998412",
         "DocDate": "2018-05-27",
-        "Timestamp": "2018-05-27T14:31:02.0952681Z",
+        "Timestamp": "2018-05-27T14:31:13.1245995Z",
         "TotalAmount": "10",
         "TotalDiscount": "0",
         "TotalExemption": "0",
@@ -61,7 +61,7 @@ http_interactions:
         "TotalTaxCalculated": "0.89",
         "TaxLines": [
         {
-        "LineNo": "8-LI",
+        "LineNo": "11-LI",
         "TaxCode": "PC040000",
         "Taxability": "true",
         "BoundaryLevel": "Zip5",
@@ -129,20 +129,20 @@ http_interactions:
         ,
         "TaxDate": "2018-05-27"}
     http_version: 
-  recorded_at: Sun, 27 May 2018 14:31:13 GMT
+  recorded_at: Sun, 27 May 2018 14:31:25 GMT
 - request:
     method: post
     uri: https://development.avalara.net/1.0/tax/get
     body:
       encoding: UTF-8
-      string: '{"DocCode":"R520027028","DocDate":"2018-05-27","Discount":"0.0","Commit":false,"DocType":"SalesOrder","Addresses":[{"AddressCode":"Orig","Line1":"9529
+      string: '{"DocCode":"R951998412","DocDate":"2018-05-27","Discount":"0.0","Commit":false,"DocType":"SalesOrder","Addresses":[{"AddressCode":"Orig","Line1":"9529
         Vernon Court","Line2":"","City":"New York","Region":"New York","PostalCode":"10027","Country":"United
         States"},{"AddressCode":"Dest","Line1":"9529 Vernon Court","Line2":"","City":"New
-        York","Region":"New York","Country":"US","PostalCode":"10027"},{"AddressCode":"16","Line1":"1600
-        Pennsylvania Ave NW","Line2":null,"City":"Washington","PostalCode":"20500","Country":"US"}],"Lines":[{"LineNo":"8-LI","Description":"Product
-        #8 - 6869","TaxCode":"PC040000","ItemCode":"SKU-8","Qty":1,"Amount":10.0,"OriginCode":"16","DestinationCode":"Dest","CustomerUsageType":null,"Discounted":false,"TaxIncluded":false},{"LineNo":"8-FR","ItemCode":"Avalara
-        Ground","Qty":1,"Amount":100.0,"OriginCode":"16","DestinationCode":"Dest","CustomerUsageType":null,"Description":"Shipping
-        Charge","TaxCode":"FR000000","Discounted":false,"TaxIncluded":false}],"CustomerCode":8,"CompanyCode":"test_company","CustomerUsageType":null,"ExemptionNo":null,"Client":"a0o33000004FH8l","ReferenceCode":"R520027028","DetailLevel":"Tax","CurrencyCode":"USD"}'
+        York","Region":"New York","Country":"US","PostalCode":"10027"},{"AddressCode":"22","Line1":"1600
+        Pennsylvania Ave NW","Line2":null,"City":"Washington","PostalCode":"20500","Country":"US"}],"Lines":[{"LineNo":"11-LI","Description":"Product
+        #11 - 7992","TaxCode":"PC040000","ItemCode":"SKU-11","Qty":1,"Amount":10.0,"OriginCode":"22","DestinationCode":"Dest","CustomerUsageType":null,"Discounted":false,"TaxIncluded":false},{"LineNo":"11-FR","ItemCode":"Avalara
+        Ground","Qty":1,"Amount":100.0,"OriginCode":"22","DestinationCode":"Dest","CustomerUsageType":null,"Description":"Shipping
+        Charge","TaxCode":"FR000000","Discounted":false,"TaxIncluded":false}],"CustomerCode":11,"CompanyCode":"test_company","CustomerUsageType":null,"ExemptionNo":null,"Client":"a0o33000004FH8l","ReferenceCode":"R951998412","DetailLevel":"Tax","CurrencyCode":"USD"}'
     headers:
       Content-Type:
       - application/json
@@ -160,11 +160,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 27 May 2018 14:31:03 GMT
+      - Sun, 27 May 2018 14:31:14 GMT
       Content-Type:
       - text/json; charset=utf-8
       Content-Length:
-      - '883'
+      - '879'
       Connection:
       - keep-alive
       Cache-Control:
@@ -176,16 +176,16 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Set-Cookie:
-      - TS017f1821=01a8ddc44e2bfe1aa4caa77296e5cdc495d7f66c12ae2e295ee4e082c8fbabdbff98eb96f5d9870ac604000638da2d1339c7f04679;
+      - TS017f1821=01a8ddc44e1f7df9d9ddb9442fa4e0e73b08c5423148e7e51518962dd22c963499dfb77fa5558d0308dc39e54a96fc31d2aed67bf2;
         Path=/
     body:
       encoding: ASCII-8BIT
       string: |
         {
         "ResultCode": "Success",
-        "DocCode": "R520027028",
+        "DocCode": "R951998412",
         "DocDate": "2018-05-27",
-        "Timestamp": "2018-05-27T14:31:02.6528736Z",
+        "Timestamp": "2018-05-27T14:31:13.8870001Z",
         "TotalAmount": "110",
         "TotalDiscount": "0",
         "TotalExemption": "0",
@@ -194,7 +194,7 @@ http_interactions:
         "TotalTaxCalculated": "9.77",
         "TaxLines": [
         {
-        "LineNo": "8-LI",
+        "LineNo": "11-LI",
         "TaxCode": "PC040000",
         "Taxability": "true",
         "BoundaryLevel": "Zip5",
@@ -238,7 +238,7 @@ http_interactions:
         ]
         }
         ,{
-        "LineNo": "8-FR",
+        "LineNo": "11-FR",
         "TaxCode": "FR000000",
         "Taxability": "true",
         "BoundaryLevel": "Zip5",
@@ -295,7 +295,7 @@ http_interactions:
         "JurisCode": "3600051000"}
         ,{
         "Address": "1600 Pennsylvania Ave NW",
-        "AddressCode": "16",
+        "AddressCode": "22",
         "City": "Washington",
         "Country": "US",
         "PostalCode": "20500",
@@ -306,5 +306,5 @@ http_interactions:
         ,
         "TaxDate": "2018-05-27"}
     http_version: 
-  recorded_at: Sun, 27 May 2018 14:31:15 GMT
+  recorded_at: Sun, 27 May 2018 14:31:26 GMT
 recorded_with: VCR 4.0.0
